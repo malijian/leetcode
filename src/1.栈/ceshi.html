@@ -11,29 +11,27 @@
 </body>
 </html>
 <script>
-    var buildArray = function(target, n) {
-    let arr =[]
-   for (let i = 1; i < n+1; i++) {
-     if (target.length) {
-        if (target.indexOf(i)==-1) {
-            arr.push('Push')
-            arr.push('Pop')
-
-        }else {
-            arr.push('Push')
-            target.shift()
+   var backspaceCompare = function(s, t) {
+        function b(name) {
+            let arr =[]
+            for (const i of name) {
+            if (i=='#') {
+                arr.pop()
+            }else {
+                arr.push(i)
+            }
         }
-    }
-     }
-    
-  return arr
-};
+        return arr
+        }
+        console.log(b(s),b(t),'222');
+        return b(s).join() ===b(t).join()
+    };
 
 // 测试用例
-let test = [1,2]
-let n = 4
+let s = "a#c";
+let t = "b";
 
 console.time('执行用时');
-console.log(buildArray(test,n));
+console.log(backspaceCompare(s,t));
 console.timeEnd('执行用时');
 </script>
