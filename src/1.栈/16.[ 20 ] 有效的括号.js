@@ -5,11 +5,26 @@
 
 // * 思路：
 
-
+var isValid = function(s) {
+    let arr =[]
+    for (const item of s) {
+        if (item===')'&&arr[arr.length-1]==='(') {
+            arr.pop()
+        }else if (item===']'&&arr[arr.length-1]==='[') {
+            arr.pop()
+        }else if (item==='}'&&arr[arr.length-1]==='{') {
+            arr.pop()
+        }else{
+            arr.push(item)
+        }
+       
+    }
+    return arr.length===0
+};
 
 // 测试用例
-let test = ''
+let test = '()'
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(isValid(test));
 console.timeEnd('执行用时');

@@ -4,7 +4,21 @@
  */
 
 // * 思路：
+var RecentCounter = function() {
+    this.stack =[]
+};
 
+/** 
+ * @param {number} t
+ * @return {number}
+ */
+RecentCounter.prototype.ping = function(t) {
+    this.stack.push(t)
+   while(t-3000>this.stack[0]){
+       this.stack.shift()
+   }
+   return  this.stack.length
+};
 
 
 // 测试用例
