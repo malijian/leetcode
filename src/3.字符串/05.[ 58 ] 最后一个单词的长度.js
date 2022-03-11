@@ -5,11 +5,14 @@
 
 // * 思路：
 
-
+var lengthOfLastWord = function(s) {
+    let b =s.trim().split(' ')
+   return b[b.length-1].length
+};
 
 // 测试用例
-let test = ''
+let test = 'Today is a nice day '
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(lengthOfLastWord(test));
 console.timeEnd('执行用时');

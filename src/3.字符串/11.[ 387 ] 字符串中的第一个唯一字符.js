@@ -4,12 +4,19 @@
  */
 
 // * 思路：
-
+var firstUniqChar = function(s) {
+  for (let i = 0; i < s.length; i++) {
+     if (s.lastIndexOf(s[i])===s.indexOf(s[i])) {
+         return i
+     } 
+  }
+  return -1
+};  
 
 
 // 测试用例
-let test = ''
+let test = 'ab'
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(firstUniqChar(test));
 console.timeEnd('执行用时');

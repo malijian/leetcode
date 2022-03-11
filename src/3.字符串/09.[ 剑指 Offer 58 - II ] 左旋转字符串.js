@@ -5,11 +5,19 @@
 
 // * 思路：
 
-
+var reverseLeftWords = function(s, n) {
+    let str=''
+    for (let i = n; i < s.length; i++) {str +=s[i] }
+ for (let i = 0; i < n; i++) {str +=s[i]}
+ 
+ console.log(str);
+};
 
 // 测试用例
-let test = ''
 
+let s = "abcdefg"
+let k = 2
+// cdefgab
 console.time('执行用时');
-console.log(xxx(test));
+console.log(reverseLeftWords(s,k));
 console.timeEnd('执行用时');

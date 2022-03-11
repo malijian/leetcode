@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // toLocaleString(locales,options)
+    // locales：缩写语言代码
+    // options 为一个对象
+     let a= {
+        style:'',//currency, percent
+        currency : '',//在货币格式化中使用的货币符 USD EUR  CNY 
+        currencyDisplay:'', //如何在货币格式化中显示货币 symbol code name
+        useGrouping:'',// 是否使用分组分隔符，默认：true
+        minimumIntegerDigits:8, //整数数字的最小数
+        minimumFractionDigits:2, //小数位数的最小数目
+        maximumFractionDigits:4, //小数位数的最大数目
+        minimumSignificantDigits:2, //使用的有效数字的最小数目
+        maximumSignificantDigits:4,//使用的有效数字的最大数目
+        //以下为日期配置
+        hour12:false,//是否使用12小时的时间
+        timeZone:'', //要使用的时区
+        formatMatcher:'',// 要使用的格式匹配算法
+
+      }
+
+
+
+
+    // toLocaleString 可使用的类型有  number   array  date
+    let num = 12034.456;
+    // let num =2089
+    console.log(num.toLocaleString()); //2,000   千分符的基本用法
+    console.log( num.toLocaleString('zh-u-nu-hanidec'));// "二,〇八九"   阿拉伯数字转成中文数字
+    console.log(num.toLocaleString('zh',{style:'percent'}));  //208,900%    数字转百分比
+    console.log(num.toLocaleString('zh',{style:'percent',useGrouping:false}));//208900%    数字转百分比 (去除分隔符)
+    console.log(num.toLocaleString('zh',{style:'currency',currency:'CNY',useGrouping:false}));  //¥2089.00   转货币
+    console.log(num.toLocaleString('zh',{style:'currency',currency:'CNY', minimumFractionDigits: 0}));  //￥2,089  转货币
+    console.log(num.toLocaleString('en',{style:'currency',currency:'USD', minimumFractionDigits: 0}));  //  $2,089  转货币
+
+    num.toLocaleString('zh', { minimumIntegerDigits: 5 }); //01,234.456
+    num.toLocaleString('zh', { minimumFractionDigits: 4, useGrouping: false }); //1234.4560
+    num.toLocaleString('zh', { maximumFractionDigits: 2, useGrouping: false }); //1234.46
+    num.toLocaleString('zh', { minimumSignificantDigits: 8, useGrouping: false }); //1234.4560
+    num.toLocaleString('zh', { maximumSignificantDigits: 4, useGrouping: false }); //1234
+
+    //array---------------------------------
+    // var arr = [1,22,3333]
+    // console.log( arr.toLocaleString('zh', { style: 'currency', currency: 'CNY' }));  //¥1.00,¥22.00,¥3,333.00
+
+  //date---------------------------------
+  var date = new Date()
+//   console.log(date);
+//   console.log( date.toLocaleString());// "2020/9/28 下午5:14:53"
+//   console.log(date.toLocaleString('zh',{ hour12: false })); // "2020/9/28 17:14:53"
+console.log(date.toLocaleString("ko-KR"));
+</script>
