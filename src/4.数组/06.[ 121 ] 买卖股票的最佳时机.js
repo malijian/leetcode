@@ -5,11 +5,13 @@
 
 // * 思路：
 
-
+var maxProfit = function(prices) {
+    
+};
 
 // 测试用例
-let test = ''
+let test = [7,1,5,3,6,4]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(maxProfit(test));
 console.timeEnd('执行用时');
