@@ -11,7 +11,6 @@ var twoSum = function(nums, target) {
   for (let i = 0; i < nums.length; i++) {
         const num = nums[i]
        let o =target -num
-       console.log(obj,o,'xxx');
        if (obj.hasOwnProperty(o)) {
         return [i,obj[o]]
        }

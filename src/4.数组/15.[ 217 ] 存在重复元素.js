@@ -4,12 +4,22 @@
  */
 
 // * 思路：
-
+var containsDuplicate = function(nums) {
+    let map =new Map()
+    for (let i = 0; i < nums.length; i++) {
+       let item=nums[i]
+       map.set(item, (map.get(item) || 0) + 1);
+        if (map.get(item)>=2) {
+            return true
+        }
+    }
+    return false
+};
 
 
 // 测试用例
-let test = ''
+let test = [1,2,3,1]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(containsDuplicate(test));
 console.timeEnd('执行用时');

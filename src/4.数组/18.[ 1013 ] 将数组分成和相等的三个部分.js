@@ -4,12 +4,26 @@
  */
 
 // * 思路：
+var canThreePartsEqualSum = function(arr) {
+    let sum = arr.reduce((a,b) => a + b)
+    let num = 3
+    let temp = 0
+    for(let a of arr){
+        temp += a
+        if (temp === sum / 3) num--, temp = 0
+    }
+    return num <=  0
 
+};
 
 
 // 测试用例
-let test = ''
+let test = [0,2,1,-6,6,-7,9,1,2,0,1]
+let test2 =[12,-4,16,-5,9,-3,3,8,0]
+let test3 =[10,-10,10,-10,10,-10,10,-10]
+
+
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(canThreePartsEqualSum(test3));
 console.timeEnd('执行用时');

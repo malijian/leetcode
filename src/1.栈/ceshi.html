@@ -11,27 +11,28 @@
 </body>
 </html>
 <script>
-   var backspaceCompare = function(s, t) {
-        function b(name) {
-            let arr =[]
-            for (const i of name) {
-            if (i=='#') {
-                arr.pop()
-            }else {
-                arr.push(i)
-            }
-        }
-        return arr
-        }
-        console.log(b(s),b(t),'222');
-        return b(s).join() ===b(t).join()
-    };
-
-// 测试用例
-let s = "a#c";
-let t = "b";
-
-console.time('执行用时');
-console.log(backspaceCompare(s,t));
-console.timeEnd('执行用时');
+    let arr =[4,3,1,22,55,12,1]
+    function sort(arr) {
+    let sortArr = foo(arr)
+    console.log(sortArr);
+    let  flag1=false
+    for (let i = 0; i < sortArr.length-1; i++) {
+        if (sortArr[i]===Math.min(sortArr[i],sortArr[i+1])) {
+            flag1 = true;
+        }else {
+            flag1 = false;
+            break;
+        }   
+    }
+      if (flag1) {
+           return sortArr
+      }else{
+       return  sort(arr)
+      }
+    }
+    function foo(arr) {
+        let cloneArr =[...arr]
+        return cloneArr.sort((a,b)=>{return Math.random()-0.5})
+    }
+   console.log( sort(arr));
 </script>

@@ -5,11 +5,12 @@
 
 // * 思路：
 
-
+var kidsWithCandies = function(candies, extraCandies) {
+   return candies.map(el =>el =(el+extraCandies)>=Math.max(...candies));
+};
 
 // 测试用例
-let test = ''
-
+candies = [2,3,5,1,3], extraCandies = 3
 console.time('执行用时');
-console.log(xxx(test));
+console.log(kidsWithCandies(candies, extraCandies));
 console.timeEnd('执行用时');
