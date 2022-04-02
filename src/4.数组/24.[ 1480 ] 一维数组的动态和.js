@@ -6,10 +6,16 @@
 // * 思路：
 
 
-
+var runningSum = function(nums) {
+    const n = nums.length;
+    for (let i = 1; i < n; i++) {
+        nums[i]=nums[i]+nums[i-1]
+    }
+    return nums
+};
 // 测试用例
-let test = ''
+nums = [1,2,3,4]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(runningSum(nums));
 console.timeEnd('执行用时');

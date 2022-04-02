@@ -4,12 +4,17 @@
  */
 
 // * 思路：
-
+var sortedSquares = function(nums) {
+    for (let i = 0; i < nums.length; i++) {
+       nums[i] =Math.pow(nums[i],2) 
+    }
+    return  nums.sort((a,b)=>a-b)
+};
 
 
 // 测试用例
-let test = ''
+nums = [-7,-3,2,3,11]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(sortedSquares(nums));
 console.timeEnd('执行用时');
