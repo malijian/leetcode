@@ -6,10 +6,12 @@
 // * 思路：
 
 
-
+var smallerNumbersThanCurrent = function(nums) {
+   
+    };
 // 测试用例
-let test = ''
+let test = [6,5,4,8]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(smallerNumbersThanCurrent(test));
 console.timeEnd('执行用时');

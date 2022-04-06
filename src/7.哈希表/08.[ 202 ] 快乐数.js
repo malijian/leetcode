@@ -6,10 +6,12 @@
 // * 思路：
 
 
-
+var isHappy = function(n) {
+    //不会做
+};
 // 测试用例
-let test = ''
+let test = 19
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(isHappy(test));
 console.timeEnd('执行用时');

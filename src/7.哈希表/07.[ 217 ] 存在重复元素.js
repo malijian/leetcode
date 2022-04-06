@@ -5,7 +5,17 @@
 
 // * 思路：
 
-
+var containsDuplicate = function(nums) {
+    let map =new Map()
+       for (let i = 0; i < nums.length; i++) {
+          let item=nums[i]
+          map.set(item, (map.get(item) || 0) + 1);
+           if (map.get(item)>=2) {
+               return true
+           }
+       }
+       return false
+   };
 
 // 测试用例
 let test = ''
