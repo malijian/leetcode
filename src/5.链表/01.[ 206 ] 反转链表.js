@@ -6,13 +6,14 @@
 // * 思路：
 
 var reverseList = function(head) {
-    let prev = null;
-    let curr = head;
+    let prev = null;//前指针节点
+    let curr = head;//当前指针节点
+     //每次循环，都将当前节点指向它前面的节点，然后当前节点和前节点后移
     while (curr) {
-        const next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
+        const next = curr.next;//临时节点，暂存当前节点的下一节点，用于后移
+        curr.next = prev; //将当前节点指向它前面的节点
+        prev = curr;// 把当前的节点赋值到prev ，前指针后移
+        curr = next; //当前指针后移，循环继续
     }
     return prev;
 };

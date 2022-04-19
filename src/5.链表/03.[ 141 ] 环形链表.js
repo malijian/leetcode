@@ -4,8 +4,20 @@
  */
 
 // * 思路：
+const cycle = (head) => {
+    // head.next.next.next=head
+   let slow =head 
+   let fast =head
+    while (slow!=null&&fast.next!=null&&fast.next.next!=null) {
+       slow=slow.next
+       fast=fast.next.next
+       if (slow===fast) {
+         return true
+       }
+    }
+    return false
 
-
+  };
 
 // 测试用例
 let test = ''
