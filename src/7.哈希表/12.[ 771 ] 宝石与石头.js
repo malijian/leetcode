@@ -5,11 +5,23 @@
 
 // * 思路：
 
-
+var numJewelsInStones = function(jewels, stones) {
+    let map =new Map()
+    let total =0
+    for (const i of stones) {
+        if (jewels.indexOf(i)!==-1) {
+            map.set(i,(map.get(i)||0)+1) 
+        }
+    }
+    map.forEach((el)=>{
+        total+=el
+    })
+    return total
+};
 
 // 测试用例
-let test = ''
+jewels = "aA", stones = "aAAbbbb"
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(numJewelsInStones(jewels,stones));
 console.timeEnd('执行用时');

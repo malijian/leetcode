@@ -7,8 +7,16 @@
 
 
 var smallerNumbersThanCurrent = function(nums) {
-   
+    let arr =[]
+     nums.forEach(el => {
+         let i =0
+         nums.forEach(et=>{if (el>et)i++})
+         arr.push(i)
+     });
+     return arr
     };
+// 输入：nums = [6,5,4,8]
+// 输出：[2,1,0,3]
 // 测试用例
 let test = [6,5,4,8]
 
