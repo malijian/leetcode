@@ -3,9 +3,14 @@
  * * 题目地址：https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof
  */
 
-// * 思路：
-
-
+var reversePrint = function(head) {
+   const arr=[]
+    while (head) {
+         arr.unshift(head.val)
+         head =head.next
+    }
+    return arr
+};
 
 // 测试用例
 let test = ''

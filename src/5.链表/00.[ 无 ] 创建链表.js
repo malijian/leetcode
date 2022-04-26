@@ -87,22 +87,13 @@ const middle = (head) => {
   // const removeNthFromStart=(head,n)=>{
    
   // }
-  const reverse =(head)=>{
-    if (!head) return  null
-    let [curr,prev] =[head,null]
-    while (curr) {
-      const next =curr.next
-      curr.next =prev
-      prev =curr
-      curr=next
-    }
-    return prev
-
+  const reversePrint =(head)=>{
+    let b =head == null ? [] : reversePrint(head.next).concat(head.val)
+    return  b
   }
 // 测试用例
 let head = [1,2,3,4]
 const list =createFromArray(head)
-// console.log(list);
 // const middleValue = middle(list);
 // console.log(middleValue);
 // const  arr = toArray(list);
@@ -116,8 +107,8 @@ const list =createFromArray(head)
 // const removeValue =removeNthFromStart(list,1)
 // console.log(toArray(removeValue)); //[1,3,4,5]
 
-const reverseValue =reverse(list)
-console.log(toArray(reverseValue));
+const reverseValue =reversePrint(list)
+console.log((reverseValue));
 
 
 

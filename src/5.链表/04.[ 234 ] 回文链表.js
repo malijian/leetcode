@@ -5,11 +5,23 @@
 
 // * 思路：
 
-
+var isPalindrome = function(head) {
+    const val =[]
+    while (head) {
+        val.push(head.val)
+        head =head.next
+    }
+    for (let i = 0,j =val.length-1; i < j; i++,j--) {
+       if (val[i]!==val[j]) {
+            return false
+       } 
+    }
+    return true
+};
 
 // 测试用例
-let test = ''
+head = [1,2,2,1]
 
 console.time('执行用时');
-console.log(xxx(test));
+console.log(isPalindrome(head));
 console.timeEnd('执行用时');

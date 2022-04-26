@@ -5,7 +5,15 @@
 
 // * 思路：
 
-
+var middleNode = function(head) {
+    let [slow,fast] =[head,head]
+     while(fast&&fast.next){
+            slow=slow.next
+            fast =fast.next.next
+        }
+        console.log(slow)
+        return slow
+  };
 
 // 测试用例
 let test = ''

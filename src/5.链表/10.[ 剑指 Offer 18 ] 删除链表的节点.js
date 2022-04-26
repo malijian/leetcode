@@ -4,7 +4,20 @@
  */
 
 // * 思路：
+var deleteNode = function(head, val) {
+    if(!head) return head;
 
+    let newHead = new ListNode(0, head), p = newHead;
+    while(p.next) {
+        if(p.next.val === val) {
+            // 删除后直接返回就行了，减少点时间
+            p.next = p.next.next;
+            return newHead.next;
+        }
+        p = p.next;
+    }
+    return null;
+};
 
 
 // 测试用例

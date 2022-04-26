@@ -5,7 +5,19 @@
 
 // * 思路：
 
-
+var removeElements = function(head, val) {
+    const dummyHead = new ListNode(0);
+    dummyHead.next = head;
+    let temp = dummyHead;
+    while (temp.next !== null) {
+        if (temp.next.val == val) {
+            temp.next = temp.next.next;
+        } else {
+            temp = temp.next;
+        }
+    }
+    return dummyHead.next;
+}
 
 // 测试用例
 let test = ''

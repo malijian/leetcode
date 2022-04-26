@@ -5,7 +5,20 @@
 
 // * 思路：
 
-
+var deleteDuplicates = function(head) {
+     if (!head) {
+         return head
+     }
+     let  curr =head
+     while (curr.next) {
+         if (curr.val ===curr.next.val) {
+            curr.next =curr.next.next
+         }else {
+            curr =curr.next
+         } 
+     }
+     return head
+}
 
 // 测试用例
 let test = ''

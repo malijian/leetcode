@@ -4,7 +4,33 @@
  */
 
 // * 思路：
-
+var getIntersectionNode = function(headA, headB) {
+    //哈希集合
+    // let arr =new Set()
+    // let temp = headA;
+    //  while (temp) {
+    //      arr.add(temp)
+    //      temp =temp.next
+    //  }
+    //  temp =headB
+    //  while(temp){
+    //    if (arr.has(temp)) {
+    //        return temp
+    //    }
+    //    temp =temp.next
+    //  }
+    //  return null
+     //方法二：双指针
+     if (headA===null||headB===null) {
+         return null
+     }
+     let pA = headA, pB = headB;
+     while (headA!==headB) {
+        pA =pA===null?headB:pA.next
+        pB=pB ===null?headA:pB.next
+     }
+     return pA
+};
 
 
 // 测试用例
